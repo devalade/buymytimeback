@@ -1,0 +1,19 @@
+{
+  "name": "buymytimeback",
+  "version": "1.0.0",
+  "description": "Audit your wasted time — by day, week, month and year. Multilingual (FR/EN/ES/DE), static site.",
+  "homepage": "https://bmtb.devalade.me",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devalade/buymytimeback.git"
+  },
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler pages dev .",
+    "deploy": "wrangler pages deploy . --project-name buymytimeback --branch main"
+  },
+  "devDependencies": {
+    "wrangler": "^4.103.0"
+  }
+}
