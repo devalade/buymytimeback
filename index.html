@@ -104,7 +104,12 @@
       <div class="masthead__inner">
         <div class="masthead__brand">Buy<span class="masthead__accent">My</span>TimeBack</div>
         <div class="masthead__tools">
-          <div class="lang" id="langSwitcher" role="group" aria-label="Language"></div>
+          <bmtb-lang-switcher
+            class="lang"
+            id="langSwitcher"
+            role="group"
+            aria-label="Language"
+          ></bmtb-lang-switcher>
         </div>
       </div>
       <div class="rule rule--double"></div>
@@ -138,114 +143,18 @@
           </p>
         </div>
 
-        <form class="form" id="activityForm" autocomplete="off">
-          <div class="form__field form__field--name">
-            <label for="actName" data-i18n="form.activity">Activité</label>
-            <input
-              type="text"
-              id="actName"
-              name="name"
-              placeholder="Rédiger mes emails du jour"
-              required
-              maxlength="60"
-            />
-          </div>
-          <div class="form__field form__field--min">
-            <label for="actMin" data-i18n="form.minutes">Minutes / jour</label>
-            <input
-              type="number"
-              id="actMin"
-              name="minutes"
-              data-i18n-ph="form.minutesPh"
-              min="1"
-              max="1440"
-              placeholder="45"
-              required
-            />
-          </div>
-          <div class="form__field form__field--submit">
-            <button type="submit" class="btn btn--primary" data-i18n="form.submit">Ajouter</button>
-          </div>
-        </form>
+        <bmtb-activity-form id="activityForm"></bmtb-activity-form>
 
-        <ul class="list" id="activityList" aria-live="polite"></ul>
-
-        <p class="list__empty" id="listEmpty" data-i18n="inventory.empty">
-          L'inventaire est vide. Ajoutez votre première activité ci-dessus.
-        </p>
+        <bmtb-activity-list id="activityList"></bmtb-activity-list>
       </section>
 
       <div class="rule"></div>
 
-      <div class="opportunity" id="opportunity" aria-live="polite">
-        <div class="opportunity__kicker kicker" data-i18n="opportunity.kicker">L'opportunité</div>
-        <div class="opportunity__main">
-          <div class="opportunity__value"><span data-count="recover">0</span></div>
-          <div class="opportunity__label" data-i18n="opportunity.unit">jours / an récupérables</div>
-        </div>
-        <p class="opportunity__note" id="opportunityNote">—</p>
-      </div>
+      <bmtb-opportunity id="opportunity"></bmtb-opportunity>
 
       <div class="rule"></div>
 
-      <section class="block block--verdict" id="verdict" hidden aria-live="polite">
-        <div class="section__head">
-          <span class="num" data-i18n="verdict.num">N° 03</span>
-          <h2 class="section__title" data-i18n="verdict.title">Le verdict</h2>
-          <p class="section__sub" data-i18n="verdict.sub">Sans jugement. Juste des chiffres.</p>
-        </div>
-
-        <div class="totals">
-          <article class="total">
-            <div class="total__value"><span data-count="day">0</span></div>
-            <div class="total__unit" data-i18n="totals.day">par jour</div>
-          </article>
-          <article class="total">
-            <div class="total__value"><span data-count="week">0</span></div>
-            <div class="total__unit" data-i18n="totals.week">par semaine</div>
-          </article>
-          <article class="total">
-            <div class="total__value"><span data-count="month">0</span></div>
-            <div class="total__unit" data-i18n="totals.month">par mois</div>
-          </article>
-          <article class="total total--year">
-            <div class="total__value"><span data-count="year">0</span></div>
-            <div class="total__unit" data-i18n="totals.year">par an</div>
-          </article>
-        </div>
-
-        <div class="lifebar">
-          <div class="lifebar__head">
-            <span class="kicker" data-i18n="life.kicker">Part de votre vie éveillée consommée</span>
-            <span class="lifebar__pct" data-count="life">0%</span>
-          </div>
-          <div class="lifebar__track">
-            <div class="lifebar__fill" id="lifeFill"></div>
-            <div class="lifebar__mark" style="left: 100%"></div>
-          </div>
-          <p class="lifebar__note" data-i18n="life.note">
-            Sur une base de 16 heures d'éveil par jour.
-          </p>
-        </div>
-
-        <div class="rule rule--soft"></div>
-
-        <div class="grid grid--two">
-          <div class="panel">
-            <div class="panel__head">
-              <span class="kicker" data-i18n="panel.compare">Ce que cela représente · par an</span>
-            </div>
-            <ul class="compare" id="compareList"></ul>
-          </div>
-
-          <div class="panel">
-            <div class="panel__head">
-              <span class="kicker" data-i18n="panel.projection">Sur la durée</span>
-            </div>
-            <ul class="project" id="projectList"></ul>
-          </div>
-        </div>
-      </section>
+      <bmtb-verdict id="verdict"></bmtb-verdict>
 
       <section class="block" id="faq">
         <div class="section__head">
