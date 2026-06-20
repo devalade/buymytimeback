@@ -1,242 +1,311 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Combien de temps perdez-vous ? Calculateur de temps perdu</title>
-  <meta name="description" content="Combien de temps perdez-vous vraiment ? Calculateur gratuit par jour, semaine, mois et année, avec projections et comparaisons frappantes. Sans inscription." />
-  <meta name="robots" content="index, follow, max-image-preview:large" />
-  <meta name="theme-color" content="#f1ebdd" />
-  <meta name="author" content="BuyMyTimeBack" />
-  <meta name="keywords" content="calculateur de temps perdu, temps perdu, temps gaspillé, audit du temps, combien de temps je perds, gestion du temps" />
-  <link rel="canonical" href="https://bmtb.devalade.me/" />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="/favicon.svg" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://bmtb.devalade.me/" />
-  <meta property="og:site_name" content="BuyMyTimeBack" />
-  <meta property="og:title" content="Combien de temps perdez-vous ? Calculateur de temps perdu" />
-  <meta property="og:description" content="Calculez gratuitement le temps que vous perdez chaque jour, semaine, mois et année. Projections et comparaisons frappantes. Sans inscription." />
-  <meta property="og:locale" content="fr_FR" />
-  <meta property="og:image" content="https://bmtb.devalade.me/og.webp" />
-  <meta property="og:image:secure_url" content="https://bmtb.devalade.me/og.webp" />
-  <meta property="og:image:type" content="image/webp" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="BuyMyTimeBack — How much time are you really losing?" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Combien de temps perdez-vous ? Calculateur de temps perdu" />
-  <meta name="twitter:description" content="Calculez gratuitement le temps que vous perdez chaque jour, semaine, mois et année." />
-  <meta name="twitter:image" content="https://bmtb.devalade.me/og.webp" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=2" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "BuyMyTimeBack",
-    "alternateName": "Calculateur de temps perdu",
-    "url": "https://bmtb.devalade.me/",
-    "description": "Calculez le temps que vous perdez chaque jour, semaine, mois et année, avec projections et comparaisons frappantes.",
-    "applicationCategory": "UtilityApplication",
-    "operatingSystem": "Any (navigateur web)",
-    "browserRequirements": "Requires JavaScript",
-    "inLanguage": ["fr", "en", "es", "de"],
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
-    "featureList": "Calcul par jour, semaine, mois et année ; projections sur 1, 5 et 10 ans ; comparaisons frappantes ; données stockées localement."
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Combien de temps perdez-vous ? Calculateur de temps perdu</title>
+    <meta
+      name="description"
+      content="Combien de temps perdez-vous vraiment ? Calculateur gratuit par jour, semaine, mois et année, avec projections et comparaisons frappantes. Sans inscription."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#f1ebdd" />
+    <meta name="author" content="BuyMyTimeBack" />
+    <meta
+      name="keywords"
+      content="calculateur de temps perdu, temps perdu, temps gaspillé, audit du temps, combien de temps je perds, gestion du temps"
+    />
+    <link rel="canonical" href="https://bmtb.devalade.me/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bmtb.devalade.me/" />
+    <meta property="og:site_name" content="BuyMyTimeBack" />
+    <meta property="og:title" content="Combien de temps perdez-vous ? Calculateur de temps perdu" />
+    <meta
+      property="og:description"
+      content="Calculez gratuitement le temps que vous perdez chaque jour, semaine, mois et année. Projections et comparaisons frappantes. Sans inscription."
+    />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:image" content="https://bmtb.devalade.me/og.webp" />
+    <meta property="og:image:secure_url" content="https://bmtb.devalade.me/og.webp" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="BuyMyTimeBack — How much time are you really losing?" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Combien de temps perdez-vous ? Calculateur de temps perdu"
+    />
+    <meta
+      name="twitter:description"
+      content="Calculez gratuitement le temps que vous perdez chaque jour, semaine, mois et année."
+    />
+    <meta name="twitter:image" content="https://bmtb.devalade.me/og.webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css?v=3" />
+    <script type="application/ld+json">
       {
-        "@type": "Question",
-        "name": "Comment est calculé le temps perdu ?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Vous indiquez, pour chaque activité, le nombre de minutes passées par jour. L'outil déduit vos totaux en multipliant par 7 (semaine), 30,44 (mois) et 365,25 (année)." }
-      },
-      {
-        "@type": "Question",
-        "name": "Que signifie la part de vie éveillée consommée ?",
-        "acceptedAnswer": { "@type": "Answer", "text": "C'est la part de vos 16 heures d'éveil quotidiennes absorbée par les activités listées. Au-delà de 100 %, vous empiétez sur votre sommeil." }
-      },
-      {
-        "@type": "Question",
-        "name": "Mes données sont-elles vraiment privées ?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Oui. Tout est stocké localement dans votre navigateur (localStorage). Rien n'est envoyé ni enregistré sur un serveur." }
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "BuyMyTimeBack",
+        "alternateName": "Calculateur de temps perdu",
+        "url": "https://bmtb.devalade.me/",
+        "description": "Calculez le temps que vous perdez chaque jour, semaine, mois et année, avec projections et comparaisons frappantes.",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any (navigateur web)",
+        "browserRequirements": "Requires JavaScript",
+        "inLanguage": ["fr", "en", "es", "de"],
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+        "featureList": "Calcul par jour, semaine, mois et année ; projections sur 1, 5 et 10 ans ; comparaisons frappantes ; données stockées localement."
       }
-    ]
-  }
-  </script>
-</head>
-<body>
-
-  <header class="masthead">
-    <div class="masthead__inner">
-      <div class="masthead__brand">Buy<span class="masthead__accent">My</span>TimeBack</div>
-      <div class="masthead__tools">
-        <div class="lang" id="langSwitcher" role="group" aria-label="Language"></div>
-      </div>
-    </div>
-    <div class="rule rule--double"></div>
-  </header>
-
-  <main>
-
-    <section class="hero">
-      <div class="hero__kicker">
-        <span class="num" data-i18n="hero.num">N° 01</span>
-        <span class="kicker" data-i18n="hero.kicker">L'enquête</span>
-      </div>
-      <h1 class="hero__title" data-i18n-html="hero.title">Combien de temps<br />perdez-vous,<br /><em>vraiment&nbsp;?</em></h1>
-      <p class="hero__lede" data-i18n-html="hero.lede"><span class="dropcap">O</span>n parle rarement de son temps comme on parle de son argent. Pourtant, il s'écoule de la même façon — goutte à goutte, sans reçu, sans relevé bancaire. Cet outil dresse le bilan. Inscrivez ce que vous faites chaque jour. Laissez les chiffres parler.</p>
-    </section>
-
-    <div class="rule"></div>
-
-    <section class="block" id="inventory">
-      <div class="section__head">
-        <span class="num" data-i18n="inventory.num">N° 02</span>
-        <h2 class="section__title" data-i18n="inventory.title">L'inventaire</h2>
-        <p class="section__sub" data-i18n="inventory.sub">Listez ce qui dévore vos minutes. Soyez honnête — personne ne lira.</p>
-      </div>
-
-      <form class="form" id="activityForm" autocomplete="off">
-        <div class="form__field form__field--name">
-          <label for="actName" data-i18n="form.activity">Activité</label>
-          <input type="text" id="actName" name="name" data-i18n-ph="form.activityPh" placeholder="Ex. Scroller Instagram" required maxlength="60" />
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Comment est calculé le temps perdu ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Vous indiquez, pour chaque activité, le nombre de minutes passées par jour. L'outil déduit vos totaux en multipliant par 7 (semaine), 30,44 (mois) et 365,25 (année)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Que signifie la part de vie éveillée consommée ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "C'est la part de vos 16 heures d'éveil quotidiennes absorbée par les activités listées. Au-delà de 100 %, vous empiétez sur votre sommeil."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Mes données sont-elles vraiment privées ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui. Tout est stocké localement dans votre navigateur (localStorage). Rien n'est envoyé ni enregistré sur un serveur."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <header class="masthead">
+      <div class="masthead__inner">
+        <div class="masthead__brand">Buy<span class="masthead__accent">My</span>TimeBack</div>
+        <div class="masthead__tools">
+          <div class="lang" id="langSwitcher" role="group" aria-label="Language"></div>
         </div>
-        <div class="form__field form__field--min">
-          <label for="actMin" data-i18n="form.minutes">Minutes / jour</label>
-          <input type="number" id="actMin" name="minutes" data-i18n-ph="form.minutesPh" min="1" max="1440" placeholder="45" required />
-        </div>
-        <div class="form__field form__field--auto">
-          <label class="check">
-            <input type="checkbox" id="actAuto" name="automatable" />
-            <span class="check__box" aria-hidden="true"></span>
-            <span class="check__label" data-i18n-html="form.automatable">Automatisable<br />ou éliminable</span>
-          </label>
-        </div>
-        <div class="form__field form__field--submit">
-          <button type="submit" class="btn btn--primary" data-i18n="form.submit">Ajouter</button>
-        </div>
-      </form>
-
-      <ul class="list" id="activityList" aria-live="polite"></ul>
-
-      <p class="list__empty" id="listEmpty" data-i18n="inventory.empty">
-        L'inventaire est vide. Ajoutez votre première activité ci-dessus.
-      </p>
-    </section>
-
-    <div class="rule"></div>
-
-    <section class="block block--verdict" id="verdict" hidden>
-      <div class="section__head">
-        <span class="num" data-i18n="verdict.num">N° 03</span>
-        <h2 class="section__title" data-i18n="verdict.title">Le verdict</h2>
-        <p class="section__sub" data-i18n="verdict.sub">Sans jugement. Juste des chiffres.</p>
       </div>
+      <div class="rule rule--double"></div>
+    </header>
 
-      <div class="totals">
-        <article class="total">
-          <div class="total__value"><span data-count="day">0</span></div>
-          <div class="total__unit" data-i18n="totals.day">par jour</div>
-        </article>
-        <article class="total">
-          <div class="total__value"><span data-count="week">0</span></div>
-          <div class="total__unit" data-i18n="totals.week">par semaine</div>
-        </article>
-        <article class="total">
-          <div class="total__value"><span data-count="month">0</span></div>
-          <div class="total__unit" data-i18n="totals.month">par mois</div>
-        </article>
-        <article class="total total--year">
-          <div class="total__value"><span data-count="year">0</span></div>
-          <div class="total__unit" data-i18n="totals.year">par an</div>
-        </article>
-      </div>
-
-      <div class="lifebar">
-        <div class="lifebar__head">
-          <span class="kicker" data-i18n="life.kicker">Part de votre vie éveillée consommée</span>
-          <span class="lifebar__pct" data-count="life">0%</span>
+    <main>
+      <section class="hero">
+        <div class="hero__kicker">
+          <span class="num" data-i18n="hero.num">N° 01</span>
+          <span class="kicker" data-i18n="hero.kicker">L'enquête</span>
         </div>
-        <div class="lifebar__track">
-          <div class="lifebar__fill" id="lifeFill"></div>
-          <div class="lifebar__mark" style="left:100%"></div>
+        <h1 class="hero__title" data-i18n-html="hero.title">
+          Combien de temps<br />perdez-vous,<br /><em>vraiment&nbsp;?</em>
+        </h1>
+        <p class="hero__lede" data-i18n-html="hero.lede">
+          <span class="dropcap">O</span>n parle rarement de son temps comme on parle de son argent.
+          Pourtant, il s'écoule de la même façon — goutte à goutte, sans reçu, sans relevé. Cet
+          outil dresse le bilan. Inscrivez ce que vous faites chaque jour. Laissez les chiffres
+          parler — et voyez ce que l'automatisation pourrait vous rendre.
+        </p>
+      </section>
+
+      <div class="rule"></div>
+
+      <section class="block" id="inventory">
+        <div class="section__head">
+          <span class="num" data-i18n="inventory.num">N° 02</span>
+          <h2 class="section__title" data-i18n="inventory.title">L'inventaire</h2>
+          <p class="section__sub" data-i18n="inventory.sub">
+            Listez ce qui dévore vos minutes. Soyez honnête — personne ne lira.
+          </p>
         </div>
-        <p class="lifebar__note" data-i18n="life.note">Sur une base de 16 heures d'éveil par jour.</p>
-      </div>
 
-      <div class="rule rule--soft"></div>
-
-      <div class="grid grid--two">
-        <div class="panel">
-          <div class="panel__head">
-            <span class="kicker" data-i18n="panel.compare">Ce que cela représente · par an</span>
+        <form class="form" id="activityForm" autocomplete="off">
+          <div class="form__field form__field--name">
+            <label for="actName" data-i18n="form.activity">Activité</label>
+            <input
+              type="text"
+              id="actName"
+              name="name"
+              placeholder="Rédiger mes emails du jour"
+              required
+              maxlength="60"
+            />
           </div>
-          <ul class="compare" id="compareList"></ul>
+          <div class="form__field form__field--min">
+            <label for="actMin" data-i18n="form.minutes">Minutes / jour</label>
+            <input
+              type="number"
+              id="actMin"
+              name="minutes"
+              data-i18n-ph="form.minutesPh"
+              min="1"
+              max="1440"
+              placeholder="45"
+              required
+            />
+          </div>
+          <div class="form__field form__field--submit">
+            <button type="submit" class="btn btn--primary" data-i18n="form.submit">Ajouter</button>
+          </div>
+        </form>
+
+        <ul class="list" id="activityList" aria-live="polite"></ul>
+
+        <p class="list__empty" id="listEmpty" data-i18n="inventory.empty">
+          L'inventaire est vide. Ajoutez votre première activité ci-dessus.
+        </p>
+      </section>
+
+      <div class="rule"></div>
+
+      <div class="opportunity" id="opportunity" aria-live="polite">
+        <div class="opportunity__kicker kicker" data-i18n="opportunity.kicker">L'opportunité</div>
+        <div class="opportunity__main">
+          <div class="opportunity__value"><span data-count="recover">0</span></div>
+          <div class="opportunity__label" data-i18n="opportunity.unit">jours / an récupérables</div>
+        </div>
+        <p class="opportunity__note" id="opportunityNote">—</p>
+      </div>
+
+      <div class="rule"></div>
+
+      <section class="block block--verdict" id="verdict" hidden aria-live="polite">
+        <div class="section__head">
+          <span class="num" data-i18n="verdict.num">N° 03</span>
+          <h2 class="section__title" data-i18n="verdict.title">Le verdict</h2>
+          <p class="section__sub" data-i18n="verdict.sub">Sans jugement. Juste des chiffres.</p>
         </div>
 
-        <div class="panel">
-          <div class="panel__head">
-            <span class="kicker" data-i18n="panel.projection">Sur la durée</span>
+        <div class="totals">
+          <article class="total">
+            <div class="total__value"><span data-count="day">0</span></div>
+            <div class="total__unit" data-i18n="totals.day">par jour</div>
+          </article>
+          <article class="total">
+            <div class="total__value"><span data-count="week">0</span></div>
+            <div class="total__unit" data-i18n="totals.week">par semaine</div>
+          </article>
+          <article class="total">
+            <div class="total__value"><span data-count="month">0</span></div>
+            <div class="total__unit" data-i18n="totals.month">par mois</div>
+          </article>
+          <article class="total total--year">
+            <div class="total__value"><span data-count="year">0</span></div>
+            <div class="total__unit" data-i18n="totals.year">par an</div>
+          </article>
+        </div>
+
+        <div class="lifebar">
+          <div class="lifebar__head">
+            <span class="kicker" data-i18n="life.kicker">Part de votre vie éveillée consommée</span>
+            <span class="lifebar__pct" data-count="life">0%</span>
           </div>
-          <ul class="project" id="projectList"></ul>
+          <div class="lifebar__track">
+            <div class="lifebar__fill" id="lifeFill"></div>
+            <div class="lifebar__mark" style="left: 100%"></div>
+          </div>
+          <p class="lifebar__note" data-i18n="life.note">
+            Sur une base de 16 heures d'éveil par jour.
+          </p>
+        </div>
 
-          <div class="rule rule--soft rule--tight"></div>
+        <div class="rule rule--soft"></div>
 
-          <div class="recover">
-            <div class="recover__kicker kicker" data-i18n="recover.kicker">Si vous automatisez l'automatisable</div>
-            <div class="recover__value">
-              <span data-count="recover">0</span>
-              <small data-i18n="recover.unit">jours / an récupérables</small>
+        <div class="grid grid--two">
+          <div class="panel">
+            <div class="panel__head">
+              <span class="kicker" data-i18n="panel.compare">Ce que cela représente · par an</span>
             </div>
-            <p class="recover__note" id="recoverNote">—</p>
+            <ul class="compare" id="compareList"></ul>
+          </div>
+
+          <div class="panel">
+            <div class="panel__head">
+              <span class="kicker" data-i18n="panel.projection">Sur la durée</span>
+            </div>
+            <ul class="project" id="projectList"></ul>
           </div>
         </div>
+      </section>
+
+      <section class="block" id="faq">
+        <div class="section__head">
+          <span class="kicker" data-i18n="faq.kicker">FAQ</span>
+          <h2 class="section__title" data-i18n="faq.title">Questions fréquentes</h2>
+          <p class="section__sub" data-i18n="faq.sub">Le fonctionnement de l'outil, en clair.</p>
+        </div>
+        <div class="faq">
+          <details class="faq__item">
+            <summary class="faq__q" data-i18n="faq.q1">
+              Comment est calculé le temps perdu ?
+            </summary>
+            <p class="faq__a" data-i18n="faq.a1">
+              Vous indiquez, pour chaque activité, le nombre de minutes passées par jour. L'outil
+              déduit vos totaux en multipliant par 7 (semaine), 30,44 (mois) et 365,25 (année).
+            </p>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q" data-i18n="faq.q2">
+              Que signifie la part de vie éveillée consommée ?
+            </summary>
+            <p class="faq__a" data-i18n="faq.a2">
+              C'est la part de vos 16 heures d'éveil quotidiennes absorbée par les activités
+              listées. Au-delà de 100 %, vous empiétez sur votre sommeil.
+            </p>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q" data-i18n="faq.q3">
+              Mes données sont-elles vraiment privées ?
+            </summary>
+            <p class="faq__a" data-i18n="faq.a3">
+              Oui. Tout est stocké localement dans votre navigateur (localStorage). Rien n'est
+              envoyé ni enregistré sur un serveur.
+            </p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="rule"></div>
+      <div class="footer__inner">
+        <span class="footer__brand">BuyMyTimeBack</span>
+        <span class="footer__line" data-i18n="footer.line"
+          >Vos données restent sur cet appareil. Rien n'est envoyé nulle part.</span
+        >
+        <button type="button" class="btn btn--ghost" id="resetBtn" data-i18n="footer.reset">
+          Tout effacer
+        </button>
       </div>
-
-    </section>
-
-    <section class="block" id="faq">
-      <div class="section__head">
-        <span class="kicker" data-i18n="faq.kicker">FAQ</span>
-        <h2 class="section__title" data-i18n="faq.title">Questions fréquentes</h2>
-        <p class="section__sub" data-i18n="faq.sub">Le fonctionnement de l'outil, en clair.</p>
+      <div class="footer__credit" data-i18n-html="footer.credit">
+        Conçu par <a href="https://devalade.me" class="footer__link" rel="noopener">devalade.me</a>
       </div>
-      <div class="faq">
-        <details class="faq__item">
-          <summary class="faq__q" data-i18n="faq.q1">Comment est calculé le temps perdu ?</summary>
-          <p class="faq__a" data-i18n="faq.a1">Vous indiquez, pour chaque activité, le nombre de minutes passées par jour. L'outil déduit vos totaux en multipliant par 7 (semaine), 30,44 (mois) et 365,25 (année).</p>
-        </details>
-        <details class="faq__item">
-          <summary class="faq__q" data-i18n="faq.q2">Que signifie la part de vie éveillée consommée ?</summary>
-          <p class="faq__a" data-i18n="faq.a2">C'est la part de vos 16 heures d'éveil quotidiennes absorbée par les activités listées. Au-delà de 100 %, vous empiétez sur votre sommeil.</p>
-        </details>
-        <details class="faq__item">
-          <summary class="faq__q" data-i18n="faq.q3">Mes données sont-elles vraiment privées ?</summary>
-          <p class="faq__a" data-i18n="faq.a3">Oui. Tout est stocké localement dans votre navigateur (localStorage). Rien n'est envoyé ni enregistré sur un serveur.</p>
-        </details>
-      </div>
-    </section>
+    </footer>
 
-  </main>
-
-  <footer class="footer">
-    <div class="rule"></div>
-    <div class="footer__inner">
-      <span class="footer__brand">BuyMyTimeBack</span>
-      <span class="footer__line" data-i18n="footer.line">Vos données restent sur cet appareil. Rien n'est envoyé nulle part.</span>
-      <button type="button" class="btn btn--ghost" id="resetBtn" data-i18n="footer.reset">Tout effacer</button>
-    </div>
-    <div class="footer__credit" data-i18n-html="footer.credit">Conçu par <a href="https://devalade.me" class="footer__link" rel="noopener">devalade.me</a></div>
-  </footer>
-
-  <script src="script.js?v=2"></script>
-</body>
+    <noscript>
+      <p style="text-align: center; padding: 1rem">
+        JavaScript is required to use this calculator.
+      </p>
+    </noscript>
+    <script type="module" src="js/main.js?v=1"></script>
+  </body>
 </html>

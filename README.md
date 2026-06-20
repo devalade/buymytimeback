@@ -21,14 +21,23 @@ A static, multilingual (**FR / EN / ES / DE**) tool that turns the minutes you l
 - Plain HTML / CSS / JS — no framework, no build step
 - [Cloudflare Pages](https://pages.cloudflare.com/) for hosting
 - [Wrangler](https://developers.cloudflare.com/workers/wrangler/) CLI for deploys
-- Google Fonts: *Fraunces* + *Hanken Grotesk*
+- Google Fonts: _Fraunces_ + _Hanken Grotesk_
 
 ## Project structure
 
 ```
 index.html        markup + SEO meta + JSON-LD
 style.css         editorial design system
-script.js         i18n + calculations + localStorage
+js/               ES modules (no build step)
+  main.js         entry point
+  app.js          state, DOM rendering, event binding
+  calculator.js   pure calculation + formatting
+  i18n.js         locales, translations, language detection
+  storage.js      localStorage persistence
+  constants.js    shared constants
+  types.js        JSDoc type definitions
+tests/            node --test suite
+tests/calculator.test.js
 robots.txt
 sitemap.xml
 _headers          Cloudflare Pages caching & security headers
@@ -42,6 +51,9 @@ og-source.html    source used to regenerate og.webp
 ```bash
 npm install
 npm run dev       # local server at http://localhost:8788
+npm run test      # node built-in test runner
+npm run lint      # eslint
+npm run format    # prettier
 ```
 
 ## Deploy
