@@ -27,6 +27,14 @@ bmtb-verdict {
   display: block;
 }
 
+[hidden] {
+  display: none !important;
+}
+
+bmtb-opportunity[hidden] + .rule {
+  display: none;
+}
+
 html {
   -webkit-text-size-adjust: 100%;
 }
