@@ -38,6 +38,8 @@ export class BmtbOpportunity extends HTMLElement {
 
   update(stats, animate) {
     if (!store.activities.length) {
+      this.setCountTarget(this.recoverEl, 0, (v) => nf(v), false);
+      this.renderOpportunityNote(stats);
       this.hidden = true;
       this.classList.remove("reveal", "is-in");
       return;

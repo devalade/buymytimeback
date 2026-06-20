@@ -95,6 +95,17 @@ export class BmtbVerdict extends HTMLElement {
 
   update(activities, s, animate) {
     if (!activities.length) {
+      this.setCountTarget(this.dayEl, 0, formatDuration, false);
+      this.setCountTarget(this.weekEl, 0, formatDuration, false);
+      this.setCountTarget(this.monthEl, 0, formatDuration, false);
+      this.setCountTarget(this.yearEl, 0, formatDuration, false);
+      this.setCountTarget(this.lifeEl, 0, (v) => `${Math.round(v)}%`, false);
+      if (this.lifeFill) {
+        this.lifeFill.style.width = "0%";
+      }
+      if (this.lifeMark) {
+        this.lifeMark.style.left = "0%";
+      }
       this.hidden = true;
       this.querySelectorAll(".total, .lifebar, .panel").forEach((el) => {
         el.classList.remove("reveal", "is-in");
