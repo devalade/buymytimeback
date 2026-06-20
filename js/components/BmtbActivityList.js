@@ -37,46 +37,78 @@ export class BmtbActivityList extends HTMLElement {
   }
 
   update(activities) {
-    this.listEl.innerHTML = "";
     if (!activities.length) {
+      this.listEl.innerHTML = "";
       this.emptyEl.style.display = "";
       return;
     }
 
     this.emptyEl.style.display = "none";
     const dict = L();
-    const fragment = document.createDocumentFragment();
 
-    activities.forEach((a, i) => {
-      const li = document.createElement("li");
-
-      const idx = document.createElement("span");
-      idx.className = "row__idx";
-      idx.textContent = String(i + 1).padStart(2, "0");
-
-      const name = document.createElement("span");
-      name.className = "row__name";
-      name.innerHTML = `<strong>${escapeHtml(a.name)}</strong>`;
-
-      const meta = document.createElement("span");
-      meta.className = "row__meta";
-      meta.innerHTML = `<b>${a.minutes}</b> ${dict.row.minSuffix}`;
-
-      const del = document.createElement("button");
-      del.type = "button";
-      del.className = "row__del";
-      del.setAttribute("aria-label", `${dict.row.del} ${a.name}`);
-      del.innerHTML = `<span class="row__del-text">${dict.row.del}</span>`;
-      del.addEventListener("click", () => store.removeActivity(a.id));
-
-      li.appendChild(idx);
-      li.appendChild(name);
-      li.appendChild(meta);
-      li.appendChild(del);
-      fragment.appendChild(li);
+    // Reconcile list items in-place
+    const listEl = this.listEl;
+    const currentChildren = Array.from(listEl.children);
+    const existingById = new Map();
+    currentChildren.forEach((child) => {
+      const id = child.getAttribute("data-id");
+      if (id) {
+        existingById.set(id, child);
+      }
     });
 
-    this.listEl.appendChild(fragment);
+    activities.forEach((a, i) => {
+      const formattedIdx = String(i + 1).padStart(2, "0");
+      const currentChildAtIndex = listEl.children[i];
+      let li = existingById.get(a.id);
+
+      if (li) {
+        // Reuse existing element, update index if it changed
+        const idxEl = li.querySelector(".row__idx");
+        if (idxEl && idxEl.textContent !== formattedIdx) {
+          idxEl.textContent = formattedIdx;
+        }
+        // Move element if it is not at the correct visual index
+        if (li !== currentChildAtIndex) {
+          listEl.insertBefore(li, currentChildAtIndex || null);
+        }
+      } else {
+        // Create new element
+        li = document.createElement("li");
+        li.setAttribute("data-id", a.id);
+
+        const idx = document.createElement("span");
+        idx.className = "row__idx";
+        idx.textContent = formattedIdx;
+
+        const name = document.createElement("span");
+        name.className = "row__name";
+        name.innerHTML = `<strong>${escapeHtml(a.name)}</strong>`;
+
+        const meta = document.createElement("span");
+        meta.className = "row__meta";
+        meta.innerHTML = `<b>${a.minutes}</b> ${dict.row.minSuffix}`;
+
+        const del = document.createElement("button");
+        del.type = "button";
+        del.className = "row__del";
+        del.setAttribute("aria-label", `${dict.row.del} ${a.name}`);
+        del.innerHTML = `<span class="row__del-text">${dict.row.del}</span>`;
+        del.addEventListener("click", () => store.removeActivity(a.id));
+
+        li.appendChild(idx);
+        li.appendChild(name);
+        li.appendChild(meta);
+        li.appendChild(del);
+
+        listEl.insertBefore(li, currentChildAtIndex || null);
+      }
+    });
+
+    // Remove any remaining stale children
+    while (listEl.children.length > activities.length) {
+      listEl.lastElementChild.remove();
+    }
   }
 }
 
