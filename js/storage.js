@@ -2,7 +2,7 @@
  * @fileoverview localStorage persistence helpers.
  */
 
-import { STORAGE_KEY, SEED_KEY } from "./constants.js";
+import { STORAGE_KEY } from "./constants.js";
 
 /** @typedef {import('./types.js').Activity} Activity */
 
@@ -35,28 +35,6 @@ export function loadActivities() {
 export function saveActivities(activities) {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify({ activities }));
-  } catch {
-    // Ignore localStorage errors.
-  }
-}
-
-/**
- * @returns {boolean}
- */
-export function hasSeeded() {
-  try {
-    return Boolean(localStorage.getItem(SEED_KEY));
-  } catch {
-    return false;
-  }
-}
-
-/**
- * Mark the default examples as already seeded.
- */
-export function markSeeded() {
-  try {
-    localStorage.setItem(SEED_KEY, "1");
   } catch {
     // Ignore localStorage errors.
   }

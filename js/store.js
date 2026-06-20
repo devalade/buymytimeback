@@ -3,9 +3,9 @@
  */
 
 import { DEFAULT_LANG } from "./constants.js";
-import { detectLang, setLang as setI18nLang, persistLang, L } from "./i18n.js";
+import { detectLang, setLang as setI18nLang, persistLang } from "./i18n.js";
 import { computeStats } from "./calculator.js";
-import { loadActivities, saveActivities, markSeeded } from "./storage.js";
+import { loadActivities, saveActivities } from "./storage.js";
 
 /** @typedef {import('./types.js').Activity} Activity */
 
@@ -34,29 +34,9 @@ class Store extends EventTarget {
     setI18nLang(this.lang);
 
     this.activities = loadActivities();
-    const justSeeded = this.maybeSeed();
 
     this.dispatchLangChange();
-    this.dispatchActivitiesChange(justSeeded);
-  }
-
-  /**
-   * Seed default activities if empty and never seeded.
-   * @returns {boolean}
-   */
-  maybeSeed() {
-    if (this.activities.length > 0) {
-      return false;
-    }
-    const examples = L().examples || [];
-    this.activities = examples.map((ex) => ({
-      id: uid(),
-      name: ex.name,
-      minutes: Math.max(1, Math.min(1440, Math.round(ex.minutes)))
-    }));
-    markSeeded();
-    saveActivities(this.activities);
-    return true;
+    this.dispatchActivitiesChange(false);
   }
 
   /**

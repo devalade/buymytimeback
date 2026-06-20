@@ -26,25 +26,36 @@ export class BmtbOpportunity extends HTMLElement {
     this.setAttribute("aria-live", "polite");
     this.innerHTML = `
       <div class="opportunity__kicker kicker" data-i18n="opportunity.kicker">L'opportunité</div>
-      <div class="opportunity__main">
+      <div class="opportunity__content">
         <div class="opportunity__value"><span data-count="recover">0</span></div>
-        <div class="opportunity__label" data-i18n="opportunity.unit">jours / an récupérables</div>
+        <div class="opportunity__text">
+          <div class="opportunity__label" data-i18n="opportunity.unit">jours / an récupérables</div>
+          <p class="opportunity__note" id="opportunityNote">—</p>
+        </div>
       </div>
-      <p class="opportunity__note" id="opportunityNote">—</p>
     `;
   }
 
   update(stats, animate) {
+    if (!store.activities.length) {
+      this.hidden = true;
+      this.classList.remove("reveal", "is-in");
+      return;
+    }
+    this.hidden = false;
+
     this.setCountTarget(this.recoverEl, stats.recoverDays, (v) => nf(v), animate);
     this.renderOpportunityNote(stats);
+
     if (animate) {
-      this.classList.add("reveal");
-      this.classList.remove("is-in");
-      requestAnimationFrame(() => {
+      if (!this.classList.contains("is-in")) {
+        this.classList.add("reveal");
         requestAnimationFrame(() => {
-          this.classList.add("is-in");
+          requestAnimationFrame(() => {
+            this.classList.add("is-in");
+          });
         });
-      });
+      }
     } else {
       this.classList.remove("reveal", "is-in");
     }

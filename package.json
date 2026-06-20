@@ -11,7 +11,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "wrangler pages dev .",
+    "dev": "wrangler pages dev . & (sleep 1.5 && open http://localhost:8788) & wait",
     "deploy": "wrangler pages deploy . --project-name buymytimeback --branch main",
     "lint": "eslint js/ tests/",
     "format": "prettier --write .",

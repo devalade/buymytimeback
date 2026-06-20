@@ -12,6 +12,7 @@ export class BmtbVerdict extends HTMLElement {
     this.yearEl = this.querySelector('[data-count="year"]');
     this.lifeEl = this.querySelector('[data-count="life"]');
     this.lifeFill = this.querySelector("#lifeFill");
+    this.lifeMark = this.querySelector(".lifebar__mark");
     this.compareList = this.querySelector("#compareList");
     this.projectList = this.querySelector("#projectList");
 
@@ -95,6 +96,9 @@ export class BmtbVerdict extends HTMLElement {
   update(activities, s, animate) {
     if (!activities.length) {
       this.hidden = true;
+      this.querySelectorAll(".total, .lifebar, .panel").forEach((el) => {
+        el.classList.remove("reveal", "is-in");
+      });
       return;
     }
 
@@ -108,13 +112,16 @@ export class BmtbVerdict extends HTMLElement {
     const fillPct = Math.min(100, s.lifePct);
     if (animate) {
       this.lifeFill.style.width = "0%";
+      this.lifeMark.style.left = "0%";
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           this.lifeFill.style.width = `${fillPct.toFixed(1)}%`;
+          this.lifeMark.style.left = `${fillPct.toFixed(1)}%`;
         });
       });
     } else {
       this.lifeFill.style.width = `${fillPct.toFixed(1)}%`;
+      this.lifeMark.style.left = `${fillPct.toFixed(1)}%`;
     }
 
     this.renderComparisons(s.perYear);
@@ -229,8 +236,10 @@ export class BmtbVerdict extends HTMLElement {
   revealVerdict() {
     const targets = Array.from(this.querySelectorAll(".total, .lifebar, .panel"));
     targets.forEach((target, i) => {
+      if (target.classList.contains("is-in")) {
+        return;
+      }
       target.classList.add("reveal");
-      target.classList.remove("is-in");
       requestAnimationFrame(() => {
         setTimeout(() => target.classList.add("is-in"), i * 90);
       });

@@ -4,7 +4,6 @@
 
 export const STORAGE_KEY = "buymytimeback.activities.v1";
 export const LANG_KEY = "buymytimeback.lang.v1";
-export const SEED_KEY = "buymytimeback.seeded.v1";
 export const DEFAULT_LANG = "fr";
 
 export const MIN_PER_DAY_AWAKE = 960;
