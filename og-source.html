@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>OG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    background: #f1ebdd;
+    color: #181512;
+    font-family: 'Hanken Grotesk', system-ui, sans-serif;
+    position: relative;
+    padding: 58px 72px 54px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .grain {
+    position: absolute; inset: 0;
+    opacity: 0.05;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid #181512;
+    padding-bottom: 16px;
+  }
+  .brand {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 0.02em;
+    font-variation-settings: 'opsz' 14;
+  }
+  .brand em { font-style: italic; color: #b97326; }
+  .kicker {
+    font-size: 15px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: #8a8170;
+    font-weight: 600;
+  }
+  .mid { padding-top: 8px; }
+  .headline {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 900;
+    font-variation-settings: 'opsz' 144;
+    font-size: 96px;
+    line-height: 0.98;
+    letter-spacing: -0.028em;
+    color: #181512;
+  }
+  .headline em {
+    font-style: italic;
+    font-weight: 400;
+    color: #b97326;
+  }
+  .accent {
+    width: 132px;
+    height: 6px;
+    background: #b97326;
+    margin-top: 30px;
+  }
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-top: 1px solid #d8ceb9;
+    padding-top: 18px;
+  }
+  .url {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 26px;
+    color: #4a4339;
+  }
+  .url b { font-style: normal; font-weight: 700; color: #b97326; }
+  .tag {
+    font-size: 15px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #8a8170;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="grain"></div>
+
+  <div class="top">
+    <div class="brand">Buy<em>My</em>TimeBack</div>
+    <div class="kicker">The Time Audit</div>
+  </div>
+
+  <div class="mid">
+    <div class="headline">How much time<br />are you really<br /><em>losing?</em></div>
+    <div class="accent"></div>
+  </div>
+
+  <div class="bottom">
+    <div class="url">bmtb<b>.</b>devalade.me</div>
+    <div class="tag">Day &middot; Week &middot; Month &middot; Year</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+# OS
+.DS_Store
+
+# Regenerable asset (source: og-source.html -> screenshot -> og.png -> og.webp)
+og.png
+
+# Node / Wrangler
+node_modules/
+.wrangler/
+*.log
+.dev.vars
